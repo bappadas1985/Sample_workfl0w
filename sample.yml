@@ -1,0 +1,30 @@
+name: shell commands
+
+on : [push]
+
+jobs:
+  run-shell-commands:
+    runs on : ubuntu-latest
+              windows
+    steps :
+      - name : string
+        run : echo "welcome to devops"
+      - name : multiple scripts
+        run : |
+          node -v
+          npm -v
+
+       - name : python command
+        run : |
+          import platform
+          print (platform.processor)
+        shell : python
+
+  run-windows-command :
+    runs-on : windows-latest
+    steps : 
+      - name : directory powershell
+        run : Get-location
+      - name : directory Bash
+        run : pwd
+        shell : bash
