@@ -1,0 +1,15 @@
+name: shell commands
+
+on : [push]
+
+jobs:
+  run-shell-commands:
+    runs on : ubuntu-latest
+              windows
+    steps :
+      - name : string
+        run : echo "welcome to devops"
+      - name : multiple scripts
+        run : |
+          node -v
+          npm -v
